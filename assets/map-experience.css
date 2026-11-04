@@ -382,3 +382,53 @@ html, body { width: 100%; max-width: none; margin: 0 !important; padding: 0 !imp
  .month-empty { margin: 20px 16px; }
  .dashboard-view .month-empty { order: 2; }
 }
+
+/* Purple geographic markers: remain distinct from the provider's green map. */
+.stat-dot::before { width: 16px; height: 16px; background: #7542d8; border: 2px solid #fff; box-shadow: 0 2px 7px #4c23894d; }
+.stat-dot:hover::before, .stat-dot:focus-visible::before, .stat-dot.active::before { background: #4c1d95; }
+.stat-dot::after { color: #46266d; border-color: #d8c5f5; box-shadow: 0 5px 20px #4d278126; }
+.stat-bubble { color: #3d2264; border-color: #c1a2eb; background: radial-gradient(circle at 28% 20%, #fcfaff 0, #eadcff 54%, #d5bcf5 100%); box-shadow: 0 5px 16px #57258b26; }
+.stat-bubble:hover { border-color: #8050c5; box-shadow: 0 6px 25px #5b298535; }
+.stat-bubble.active { color: #361851; border: 2px solid #7542d8; background: radial-gradient(circle at 28% 20%, #f8f1ff 0, #d9bcfa 70%, #be97ed 100%); box-shadow: 0 0 0 5px #7542d81a, 0 6px 23px #57258b33; }
+.stat-bubble.compact.active { border-color: #7542d8; }
+.bubble-region { color: #48236c; }
+.bubble-unit { color: #674e80; }
+.bubble-symbol i { background: #8852da; }
+.map-key > i { background: #bd95ef; border-color: #7542d8; }
+.contract-date, .contract-date time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* Consistent year/month calendar independent of the browser's native month picker. */
+.month-field { position: relative; min-width: 135px; padding: 0 20px; border-right: 1px solid #e9edf4; display: grid; gap: 5px; }
+.month-field > span { font-size: 14px; color: #52675b; }
+.month-picker-button { width: 100%; min-height: 43px; padding: 8px 10px; border: 1px solid #dce7e0; border-radius: 7px; background: #fff; color: #263f33; display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 16px; font-weight: 600; white-space: nowrap; }
+.month-picker-button .ui-icon { width: 18px; height: 18px; color: #6e4bb5; }
+.month-picker-button[aria-expanded=true] { border-color: #8f65d4; box-shadow: 0 0 0 3px #7542d814; }
+.month-calendar { position: absolute; top: calc(100% + 8px); left: 0; width: 268px; padding: 15px; border: 1px solid #d8c8ef; border-radius: 13px; box-shadow: 0 12px 35px #37204b26; background: #fff; z-index: 1200; }
+.month-calendar-head { display: grid; grid-template-columns: 34px 1fr 34px; align-items: center; gap: 6px; margin-bottom: 15px; }
+.month-calendar-head > button { height: 34px; width: 34px; border-radius: 7px; background: #f5f1fc; color: #6b41b3; font-size: 23px; padding: 0; }
+.month-calendar-head > button:hover { background: #eae0fa; }
+.month-calendar-head > button:disabled { opacity: .4; cursor: default; }
+.filters #monthCalendarYear { width: 100%; min-width: 0; min-height: 36px; padding: 6px 10px; border: 1px solid #e5dbf5; border-radius: 7px; background: #fff; color: #412c61; font-size: 16px; font-weight: 650; cursor: pointer; }
+.month-calendar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+.month-calendar-grid > button { position: relative; min-height: 43px; border: 1px solid transparent; border-radius: 7px; background: #f8f9fb; color: #4f5c65; padding: 7px 5px; font-size: 14px; }
+.month-calendar-grid > button:hover { background: #f0e8fd; color: #62329f; }
+.month-calendar-grid > button[aria-pressed=true] { background: #7542d8; border-color: #7542d8; color: #fff; font-weight: 650; }
+.month-calendar-grid > button.has-data::after { content: ''; position: absolute; width: 4px; height: 4px; left: calc(50% - 2px); bottom: 4px; border-radius: 50%; background: #7542d8; }
+.month-calendar-grid > button.has-data[aria-pressed=true]::after { background: #fff; }
+.month-calendar-note { display: flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 11px; color: #796b8b; }
+.month-calendar-note i { width: 4px; height: 4px; border-radius: 50%; background: #7542d8; }
+.dashboard-view .filters .month-field { padding: 0; border: 0; gap: 7px; }
+.dashboard-view .month-picker-button { background: #f7f5fc; }
+.detail-view .month-field { flex: 1; }
+.detail-view .filters { position: relative; z-index: 700; }
+.detail-view .filters .month-field { border-right: 1px solid #e9edf4; }
+@media (max-width:1350px) { .month-field { min-width: 115px; padding-inline: 17px; } }
+@media (max-width:1000px) { .detail-view .month-field { flex-basis: 40%; } }
+@media (max-width:760px) {
+ .dashboard-view .filters .month-field { min-width: 0; }
+ .month-field { padding-inline: 12px; }
+ .month-picker-button { font-size: 16px; }
+ .month-calendar { left: auto; right: 0; max-width: calc(100vw - 32px); }
+ .detail-view .month-field { min-width: 0; }
+ .detail-view .month-field > span { font-size: 14px; }
+}
