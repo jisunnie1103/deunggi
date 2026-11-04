@@ -88,7 +88,7 @@ h1 { font-size: 36px; line-height: 1.35; letter-spacing: -1.2px; font-weight: 74
 .tabs button { min-height: 36px; padding: 7px 12px; background: transparent; color: #516079; border-radius: 6px; font-size: 15px; white-space: nowrap; }
 .tabs button[aria-pressed=true] { background: #fff; color: var(--blue); box-shadow: 0 2px 5px #223c6620; font-weight: 650; }
 #map { height: 480px; background: #e9f0f3; z-index: 1; }
-.leaflet-tile-pane { filter: saturate(.28) contrast(.94) brightness(1.035); }
+.leaflet-tile-pane { filter: none; }
 .map-bottom { display: flex; justify-content: space-between; gap: 10px; padding: 15px 20px; font-size: 14px; color: #526179; line-height: 1.5; }
 .legend { display: flex; align-items: center; gap: 5px; white-space: nowrap; }
 .swatch { width: 14px; height: 7px; border-radius: 2px; display: inline-block; }
